@@ -1,15 +1,16 @@
 $(document).ready(function () {
-    var thumbs = $("ul li img");
+    var allImages = $('.container').find('img');
+    console.log(allImages);
 
-    for (var i = 0; i < thumbs.length; i++) {
-        if (thumbs[i].alt && thumbs[i].alt.length > 0) {
-            var imgAlt = thumbs[i].alt;
-            $(thumbs[i]).wrap('<div class="wrapper wrapper' + i + '" />').
+    for (var i = 0; i < allImages.length; i++) {
+        if (allImages[i].alt && allImages[i].alt.length > 0) {
+            var imgAlt = allImages[i].alt;
+            $(allImages[i]).wrap('<div class="wrapper wrapper' + i + '" />').
                 wrap('<figure class="">').
                 after('<figcaption class="hide overlay">' + imgAlt +
                 '</figcaption></figure></div>');
         }
-        console.log(thumbs[i].alt);
+        console.log(allImages[i].alt);
     }
 
     /*   for (var i = 0; i < $('.wrapper').length; i++) {
@@ -23,7 +24,7 @@ $(document).ready(function () {
         )
     }   */
 
- $('.container').on('mouseenter', (event) => {
+ $('figure').on('mouseenter', (event) => {
         $('figcaption').removeClass('hide');
         $('figcaption').addClass('text');
       }).on('mouseleave', event => {
