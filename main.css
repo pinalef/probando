@@ -1,17 +1,4 @@
-ul {
-    padding:0;
-    margin:0;
-  }
-  ul li {
-    float:left;
-    list-style:none;
-    margin:25px;
-    width:100%;
-    height:auto;
-    overflow:hidden;
-    border:1px solid #d2d2d2;
-    background:#ececec;
-  }
+
   
   div.wrapper{
     width:100%;

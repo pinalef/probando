@@ -5,7 +5,7 @@ $(document).ready(function () {
     for (var i = 0; i < allImages.length; i++) {
         if (allImages[i].alt && allImages[i].alt.length > 0) {
             var imgAlt = allImages[i].alt;
-            $(allImages[i]).wrap('<div class="wrapper wrapper' + i + '" />').
+            $(allImages[i]).wrap('<div class="wrapper"/>').
                 wrap('<figure class="">').
                 after('<figcaption class="hide overlay">' + imgAlt +
                 '</figcaption></figure></div>');
@@ -13,24 +13,28 @@ $(document).ready(function () {
         console.log(allImages[i].alt);
     }
 
-    /*   for (var i = 0; i < $('.wrapper').length; i++) {
-        $('.wrapper').hover(
+      // for (var i = 0; i < $('.wrapper').length; i++) {
+        $('figure').hover(
             function () {
                 $(this).find('figcaption').removeClass('hide');
+                $(this).find('figcaption').addClass('text')
+                console.log('entro a hover');
             },
             function () {
-                $(this).find('figcaption').addClass('text');
+                $(this).find('figcaption').removeClass('text');
+                $(this).find('figcaption').addClass('hide');
+                console.log('salgo de hover');
             }
         )
-    }   */
+      
 
- $('figure').on('mouseenter', (event) => {
+/*  $('figure').on('mouseenter', (event) => {
         $('figcaption').removeClass('hide');
         $('figcaption').addClass('text');
       }).on('mouseleave', event => {
         $('figcaption').removeClass('text');
         $('figcaption').addClass('hide');
-      })
+      }) */
 
 /* 
     $('.container').on('mouseenter', (event) => {
